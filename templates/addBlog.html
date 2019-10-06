@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> {{webpage_title}} </h1>
+
+<form method="POST" action="/addblog">
+    <input type="hidden" name="id" value="{{id}}" />
+    <table>
+        <tr>
+            <td colspan="2">
+                <label>Title for Your New Blog</label>
+            </td>
+            <td colspan="2">
+                <input type="text" name="title" value="{{title}}" />
+            </td>
+            <td colspan="3">
+                <span class="error">{{ title_error }}</span>
+            </td>
+        </tr>
+    <br>
+    <br>
+        <tr>
+            <td colspan="2">
+                <label>Your New Blog</label>
+            </td>
+            <td colspan="2">
+                <textarea name="content" value="{{value}}"></textarea>
+            </td>
+    <!-- <input type="textarea" class="textarea" name="content" value="{{content}}" /> -->
+            <td colspan="3">
+            <span class="error">{{ content_error }}</span>
+            </td>
+        </tr>
+
+    <br>
+    <br>
+
+        <tr>
+            <td>
+                <input type="submit" value="Add Entry" />
+            </td>
+        </tr>
+    </table>
+</form>
+
+{% endblock %}

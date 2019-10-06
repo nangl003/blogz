@@ -1,0 +1,93 @@
+<!doctype html>
+
+<html>
+
+    <head>
+        <style type="text/css">
+
+        .blogEntry {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            padding: 5px;
+            color: grey;
+        }
+
+        h1 {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: rebeccapurple;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .listedTitle {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: plum;
+            font-weight: bold;            
+        }
+
+        .mainTitle {
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            color: plum;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        #nav {
+            list-style-type: none;
+            margin: 0;
+            padding: 10px 10px 10px 10px;
+            display: block;
+            float: left;
+            background-color: black;
+            overflow: hidden;
+            color: white;
+        }
+        
+        li {
+            list-style-type: none;
+            text-decoration: none;
+        }
+
+        .error {
+            color: red;
+        }
+
+        form {
+            padding: 10px 10px 10px 10px;
+        }
+
+        label {
+            padding: 0px 10px 0px 0px;
+        }
+
+        textarea {
+                margin: 10px 0;
+                width: 500px;
+                height: 160px;
+            }
+
+        span {
+            padding: 0px;
+        }
+
+        </style>
+
+        <title> {{ webpage_title }} </title>
+
+        <nav>
+            <li id="nav"><a href="mainblog">Main Blog Page</a></li>
+            <li id="nav"><a href="addblog">Add a Blog Entry</a></li>
+        </nav>
+
+        <br>
+        <br>
+        
+    </head>
+
+    <body>
+
+        {% block content %}
+        {% endblock %}
+
+    </body>
+
+</html>

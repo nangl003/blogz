@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1> {{webpage_title}} </h1>
+
+{% if blogs|length == 0 %}
+
+<p>0 blog entries.</p>
+
+{% else %}
+
+    <ul>
+        {% for blog in blogs %}
+        <li>
+            <h2 class="listedTitle"> 
+                <a href="blogentry?id={{blog.id}}">{{blog.title}}</a>
+            </h2>
+            <input type="hidden" name="id" value="{{blog.id}}" />
+            <span> {{blog.content}} </span>
+            <br>
+            <br>
+        </li>
+        {% endfor %}
+    </ul>
+
+{% endif %}
+
+{% endblock %}
