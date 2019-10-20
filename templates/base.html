@@ -3,6 +3,7 @@
 <html>
 
     <head>
+
         <style type="text/css">
 
         .blogEntry {
@@ -60,10 +61,10 @@
         }
 
         textarea {
-                margin: 10px 0;
-                width: 500px;
-                height: 160px;
-            }
+            margin: 10px 0;
+            width: 500px;
+            height: 160px;
+        }
 
         span {
             padding: 0px;
@@ -74,8 +75,11 @@
         <title> {{ webpage_title }} </title>
 
         <nav>
-            <li id="nav"><a href="mainblog">Main Blog Page</a></li>
-            <li id="nav"><a href="addblog">Add a Blog Entry</a></li>
+            <li id="nav"><a href="/">Home</a></li>
+            <li id="nav"><a href="/mainblog">Main Blog Page</a></li>
+            <li id="nav"><a href="/addblog">Add a Blog Entry</a></li>
+            <li id="nav"><a href="/login">Log In!</a></li>
+            <li id="nav"><a href="/logout">Log Out!</a></li>
         </nav>
 
         <br>
@@ -87,6 +91,14 @@
 
         {% block content %}
         {% endblock %}
+
+        {% with messages = get_flashed_messages(with_categories=True) %}
+        <ul>
+            {% for category,message in messages %}
+                <li class="{{category}}">{{message}}</li>
+            {% endfor %}
+        </ul>
+        {% endwith %}
 
     </body>
 
